@@ -2,9 +2,9 @@
 //Navigate sirve para redirigir de una url a otra
 import { Navigate, Route, Routes } from 'react-router-dom';
 //Guardián que protege las rutas privadas del dashboard
-import ProtectedRoute from './Routes/ProtectedRoute';
+//import ProtectedRoute from './Routes/ProtectedRoute';
 //esqueleto visual (sidebar + topbar) que comparten las paginas del dashboard
-import ProtectedRoute from './routes/ProtectedRoute';
+//import ProtectedRoute from './routes/ProtectedRoute';
 //paginas publicas y privadas de la aplicacion
 import LoginPage from './Pages/LoginPage';
 

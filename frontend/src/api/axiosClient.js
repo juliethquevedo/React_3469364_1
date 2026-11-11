@@ -14,7 +14,7 @@ import axios from 'axios';
 *variable de entorno de vite (import.meta.env VITE_URL),
 *pero vamos a dejar la fila apuntando al backend */
 
-const API_URL = 'http//localhost:4000/api';
+const API_URL = 'http://localhost:4000/api';
 //axios .create genera una instancia propia distinta del axios global
 //con configuracion ya lista para usar en toda la aplicacion
 const axiosClient = axios.create({
@@ -32,7 +32,7 @@ const axiosClient = axios.create({
  * token JWT guardado en localStorage (si existe) al header
  * authorization para no tener que repetirlo en cada llamada.
  */
-axiosclient.interceptors.request.use
+axiosClient.interceptors.request.use
 ((config) => {
    //Revisamos si hay un token guardado en una sesion iniciado
 const token = localStorage.getItem('token');
