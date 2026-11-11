@@ -48,7 +48,43 @@ async function manejarEnvio(evento){
     //finally se ejcuta siempre (haya exito o error) reactivamos el boton
     setEnviando(false);
   }
+
+return(
+    <div class= "login-wraper"> 
+    <div className="card shadow-lg border-0" style={{width:'100%', maxWidth: 400}}>
+        <div className='card-boy p-4 p-md-5'>
+            <div className="text-center mb-4">
+            <i className="bi bi-boxes text-primary" style={{fontSize: '2.5rem'}}></i>
+            <h1 className= "h4 mt-2 mb-0">Inventario React</h1>
+            <p className="text-muted small">Ingresa con tu cuenta registrada</p>
+        </div>
+        {/*solo se muestra si error tiene contenido*/}
+        {error && <div className="alert altert-danger py-2 ">{error}
+        </div> }
+        <form onSubmit={manejarEnvio}>
+            <div className ="mb-3">
+                <label className= "form-label">Correo electronico</label>
+                <input
+                type="email"
+                className="form-control"
+                placeholder='admin@inventario.com'
+                value={email}
+                onChange={{e} => setEmail(e.target.value)}
+                required
+                autoFocus
+                />
+                </div>
+            <button type="submit" className='btn btn-primary W-100' disabled={enviado}>
+                </button>
+    </form>
+</div>
+</div>
+</div>
+
+);
 }
 }
+//exportamos la pagina para usarla en la ruta /login se app.jsx
+export default LoginPage;
 
 
