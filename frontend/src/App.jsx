@@ -16,10 +16,10 @@ function App() {
       <Route path="/" element={<Navigate to="/login" replace />} />
       {/*ruta publica cualquiera puede entrar a /login*/}
       <Route path="/login" element={<LoginPage />} />
-      {/*Cualquier otra url que no coincida con las anteriores */}
-      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 }
+
+export default App;
 
 
