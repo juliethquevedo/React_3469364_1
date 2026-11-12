@@ -13,7 +13,7 @@ const mysqly = require('mysql2/promise');
 require('dotenv').config();
 
 //createPool crea un conjunto de conexiones reutilizables
-const pool = mysqly.createPoolCluster({
+const pool = mysqly.createPool({
 host: process.env.DB_HOST,//servidor de mysql
 port: process.env.DB_PORT,//puerto de mysql
 user: process.env.DB_USER,//usuario de mysql

@@ -1,4 +1,4 @@
-CREATE DATABASE inventario_react;
+CREATE DATABASE IF NOT EXISTS inventario_react
 CHARACTER SET utf8mb4
 COLLATE utf8mb4_general_ci;
 

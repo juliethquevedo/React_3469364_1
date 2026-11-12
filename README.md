@@ -68,3 +68,14 @@ para las rutas
 - 9.2 src/api/authService.js
 - 9.3 src/context/AuthContext.jsx
 - 9.4 src/page/LoginPage.jsx
+
+- 10 construir el esqueleto visual del panel admin (sidebar + barra superior )
+y proteger las rutas del dasboar y solo se puedan ver si hay sesion activa
+- 10.1 archivos a crear
+frontend/src/routes/ProtectedRoutes.jsx
+frontend/src/layoust/DashboardLayout.jsx
+frontend/src/components/common/Sidebar.jsx
+frontend/src/components/common/Topbar.jsx
+frontend/src/pages/DashboardHome.jsx
+frontend/src/NotFoundPage.jsx
+editar frontend/src/App.jsx
