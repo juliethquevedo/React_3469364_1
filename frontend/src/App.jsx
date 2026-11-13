@@ -26,6 +26,13 @@ function App() {
       <Route path="/login" element={<LoginPage />}/>
         {/** cualquier otra url que no coincida  */}
         <Route path="*" element={<NotFoundPage />} />
+
+        {/*Grupo de rutas protegidas: todo lo que este dentro este Route solo se muestra
+        si ProtectedRoute confirma que hay sesion activa; si no, redirige a /login*/}
+        <Route element={<ProtectedRoute/>}/>
+        <Route path="/dashboard" element={<DashboarLayout/>}/>
+        <Route index element={<DashboardHome/>}/>
+        <Route path='usuarios'element={<UsuariosPage/>}/>
       </Routes>
   )
 }
