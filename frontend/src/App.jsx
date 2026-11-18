@@ -5,16 +5,12 @@ import { Navigate, Route, Routes} from 'react-router-dom';
 //import ProtectedRoute from './Routes/ProtectedRoute';
 //esqueleto visual (sidebar + topbar)que comparten las paginas del dashboard 
 //import ProtectedRoute from './Routes/ProtectedRoute';
+import DashboardLayout from './layout/DashboardLayout.jsx';
 
 //paginas publicas y privadas de la aplicacion
-import LoginPage from './Pages/LoginPage';
-function NotFoundPage(){
-  return (
-    <h1 className="text-center mt-5">
-      Página no encontrada
-    </h1>
-  );
-}
+import LoginPage from './page/Loginpage';
+import DashboardHome from './page/DashboardHome';
+import NotFoundPage from './page/NotFoundPage.jsx';
 
 function App() {
   return (
@@ -25,18 +21,24 @@ function App() {
       {/*ruta publica cualquiera  puede entrar a /login*/}
       <Route path="/login" element={<LoginPage />}/>
         {/** cualquier otra url que no coincida  */}
-        <Route path="*" element={<NotFoundPage />} />
+        
+        {/** Grupo de rutas protegidas: todo lo que este dentro este route solo muestra si ProtectedRoute confirma que hay sesion ACTIVA; si no, 
+         * redirige a login 
+         */}
+      <Route element={<ProtectedRoute/>}>
+      <Route path="/dashboard" element={<DashboardLayout/>}>
+         <Route index element= {<DashboardHome/>}/>
+         <Route path = "usuario" element = {<UsuarioPage/>}/>
 
-        {/*Grupo de rutas protegidas: todo lo que este dentro este Route solo se muestra
-        si ProtectedRoute confirma que hay sesion activa; si no, redirige a /login*/}
-        <Route element={<ProtectedRoute/>}/>
-        <Route path="/dashboard" element={<DashboarLayout/>}/>
-        <Route index element={<DashboardHome/>}/>
-        <Route path='usuarios'element={<UsuariosPage/>}/>
+         </Route>
+
+      </Route>
+      <Route path="*" element={<NotFoundPage />} />
       </Routes>
   )
 }
 
 export default App
+
 
 
