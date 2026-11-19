@@ -4,13 +4,13 @@
 */
 
 //Hook para leer el usuario logueado(mostrar su nombre en el saludo)
-import{useAuth} from '../context/AuthContext';
+//import{useAuth} from '../context/AuthContext';
 //Hook generico crud simulado (solo usamos listas)
-import useCrudSimulado from '/hooks/useCrudSimulado';
+//import useCrudSimulado from '/hooks/useCrudSimulado';
 //datos iniciales de cada modulo
-import mockUsuarios from '../data/mockUsuarios';
-import mockSubCategorias from  '../data/mockSubCategorias';
-import  mockProductos from  '../data/mockProductos';
+//import mockUsuarios from '../data/mockUsuarios';
+//import mockSubCategorias from  '../data/mockSubCategorias';
+//import  mockProductos from  '../data/mockProductos';
 
 //tarjeta reutilizable para mostrar un numero grande con su etiqueta
 //recibe icono (clase de dashboard-icons) titulo total (numero) y color
@@ -39,12 +39,30 @@ function DashboardHome(){
      * de registros guardados o los datos iniciales
      * si todavia no se ha guardado nada de localStorage
     */
-  const { lista: usuarios } = useCrudSimulado('usuarios',
-        mockUsuarios);
-    const { lista: categorias } = useCrudSimulado('categorias',
-        mockCategorias);
-    const { lista: subcategorias } = useCrudSimulado
-        ('subcategorias', mockSubCategorias);
-    const { lista: productos } = useCrudSimulado('productos',
-        mockProductos);
+  const { lista: usuarios } = useCrudSimulado('usuarios', mockUsuarios);
+   const { lista: categorias } = useCrudSimulado('categorias',mockCategorias);
+   const { lista: subcategorias } = useCrudSimulado('subcategorias', mockSubCategorias);
+   const { lista: productos } = useCrudSimulado('productos',mockProductos);
+  return (
+    <div>
+      <h2 className='h4 mb-1'>Hola, {usuario?.nombre}</h2>
+      <p className='text-muted mb-4'>Este es el resumen general del sistema de inventario</p>
+
+      <div className="row g-3">
+        <TarjetaResumen icono="bi-people" titulo="Usuarios activos" total={usuarios.filter(u => u.activo).length} color="primary" />
+        <TarjetaResumen icono="bi-tags" titulo="Categorías activas" total={categorias.filter(c => c.activo).length} color="success" />
+        <TarjetaResumen icono="bi-list" titulo="Subcategorías activas" total={subcategorias.filter(s => s.activo).length} color="warning" />
+        <TarjetaResumen icono="bi-box" titulo="Productos activos" total={productos.filter(p => p.activo).length} color="danger" />
+      </div>
+
+      <div className='alert alert-info mt-4 mb-0'>
+        <i className="bi-info-circle me-2"></i>
+        Los datos de usuarios, categorías, subcategorías y productos de este panel son 
+        <strong>simulados con JavaScript</strong> 
+        (se guardan en el localStorage del navegador). 
+        Solo el inicio de sesión está conectado a la base de datos real <code>inventario_react</code>.
+      </div>
+    </div>
+  );
 }
+export default DashboardHome

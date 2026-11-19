@@ -3,7 +3,7 @@
  * ruta definida por App.jsx
  */
 
-//link crea una navegacion interna sin recarga la pagina 
+//link crea una navegacion interna sin recarga la pagina P
 import { Link }from'react-router-dom';
 
 //no recibe props es el elemento de la nueva ruta comodin en App.jsx

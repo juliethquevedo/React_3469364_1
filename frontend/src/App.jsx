@@ -28,7 +28,7 @@ function App() {
       <Route element={<ProtectedRoute/>}>
       <Route path="/dashboard" element={<DashboardLayout/>}>
          <Route index element= {<DashboardHome/>}/>
-         <Route path = "usuario" element = {<UsuarioPage/>}/>
+         {/*<Route path = "usuario" element = {<UsuarioPage/>}/>*/}
 
          </Route>
 
