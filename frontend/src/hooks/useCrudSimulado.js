@@ -50,4 +50,7 @@ function useCrudSimulado(claveStorage, datosIniciales) {
       )
     );
   }
+//We return everything a page needs: the data and the 3 actions
+  return { lista, agregar, actualizar, alternarEstado };
 }
+export default useSimulatedCrud;
