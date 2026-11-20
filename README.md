@@ -78,4 +78,14 @@ frontend/src/components/common/Sidebar.jsx
 frontend/src/components/common/Topbar.jsx
 frontend/src/pages/DashboardHome.jsx
 frontend/src/NotFoundPage.jsx
-editar frontend/src/App.jsx
+edit frontend/src/App.jsx
+
+- 11 Create the user management screen with CRUD and A/D to be used
+en JavaScript
+- 11.1 se crean estos archivos
+- frontend/src/data/mockUsuarios.js
+- frontend/src/hooks/useCrudSimulado.js
+- frontend/src/components/common/EstadoBadge.jsx
+- frontend/src/components/common/ConfirmModal.jsx
+- frontend/src/components/UsuarioFormModal.jsx
+- frontend/src/pages/UsuariosPage.jsx

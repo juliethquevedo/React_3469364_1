@@ -51,8 +51,7 @@ function DashboardHome(){
 
       <div className='alert alert-info mt-4 mb-0'>
         <i className="bi-info-circle me-2"></i>
-        Los datos de usuarios, categorías, subcategorías y productos de este panel son 
-        <strong>simulados con JavaScript</strong> 
+        Los datos de usuarios, categorías, subcategorías y productos de este panel son <strong> simulados con JavaScript </strong> 
         (se guardan en el localStorage del navegador). 
         Solo el inicio de sesión está conectado a la base de datos real <code>inventario_react</code>.
       </div>
