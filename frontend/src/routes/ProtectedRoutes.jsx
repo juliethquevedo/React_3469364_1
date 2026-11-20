@@ -3,9 +3,9 @@
  * automaticamente a /login en vez de mostrar el contenido
  */
 //Navigate redirige a otra ruta; Outlet renderiza la ruta hija activa
-import {Navigatee, Outlet} from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 //Hook para leer el estado de sesion (usuario, cargando...)
-import { useAuth } from './context/AuthContext';
+import { useAuth } from '../context/AuthContext.jsx';
 
 // No recibe props: se usa como elemento envolvente en App.jsx
 function ProtectedRoute(){

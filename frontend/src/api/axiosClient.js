@@ -35,7 +35,7 @@ const token= localStorage.getItem('token');
 if (token){
 //lo agregamos al header en e formato que espera el backend:
 //authorization: Beader <token>
-config.headers.Authorization =`Bearer $ {token}`;
+config.headers.Authorization = `Bearer ${token}`;
 }
 //siempre hay que devolver "config" si o no la peticion nunca se envia 
 return config;

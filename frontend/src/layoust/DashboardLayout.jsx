@@ -26,6 +26,7 @@ function DashboardLayout() {
           {/*Outlet renderiza la ruta hija
           activa DashboardHome, usuariosPage,
           categoriaPage, .....segun la url */}
+          <Outlet />
         </main>
       </div>
     </div>

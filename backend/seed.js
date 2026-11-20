@@ -30,16 +30,18 @@ async function crearUsuarioAdmin() {
     // duplicarlo cada vez que se corra el script.
     const [existentes] = await pool.query('SELECT id FROM usuarios WHERE email = ?', [email]);
 
-    if (existentes.length > 0) {
-      // Avisamos por consola y terminamos el script sin insertar nada.
-      // process.exit(0) = "termino sin errores".
-      console.log(`El usuario ${email} ya existe. No se crea de nuevo.`);
-      process.exit(0);
-    }
-
     // bcrypt.hash("texto", saltRounds) genera un hash irreversible.
     // saltRounds = 10 es un buen balance entre seguridad y velocidad.
     const passwordEncriptada = await bcrypt.hash(passwordPlano, 10);
+
+    if (existentes.length > 0) {
+      await pool.query(
+        'UPDATE usuarios SET nombre = ?, password = ?, rol = ?, estado = 1 WHERE email = ?',
+        [nombre, passwordEncriptada, 'admin', email]
+      );
+      console.log(`Usuario administrador actualizado: ${email}`);
+      process.exit(0);
+    }
 
     // Insertamos el usuario ya con la contraseña encriptada
     await pool.query(

@@ -4,20 +4,14 @@
 */
 
 //Hook para leer el usuario logueado(mostrar su nombre en el saludo)
-//import{useAuth} from '../context/AuthContext';
-//Hook generico crud simulado (solo usamos listas)
-//import useCrudSimulado from '/hooks/useCrudSimulado';
-//datos iniciales de cada modulo
-//import mockUsuarios from '../data/mockUsuarios';
-//import mockSubCategorias from  '../data/mockSubCategorias';
-//import  mockProductos from  '../data/mockProductos';
+import { useAuth } from '../context/AuthContext.jsx';
 
 //tarjeta reutilizable para mostrar un numero grande con su etiqueta
 //recibe icono (clase de dashboard-icons) titulo total (numero) y color
 function TarjetaResumen({ icono, titulo, total, color }) {
     return (
         <div className='col-sm-6 col-lg-3'>
-            <div className='card border-0 shadow-sm border-start border-4 border-${color}'>
+            <div className={`card border-0 shadow-sm border-start border-4 border-${color}`}>
                 <div className='card-body d-flex align-items-center gap-3'>
                 <i className={`bi ${icono} fs-1 text-${color}`}></i>
                 <div>
@@ -39,10 +33,10 @@ function DashboardHome(){
      * de registros guardados o los datos iniciales
      * si todavia no se ha guardado nada de localStorage
     */
-  const { lista: usuarios } = useCrudSimulado('usuarios', mockUsuarios);
-   const { lista: categorias } = useCrudSimulado('categorias',mockCategorias);
-   const { lista: subcategorias } = useCrudSimulado('subcategorias', mockSubCategorias);
-   const { lista: productos } = useCrudSimulado('productos',mockProductos);
+  const usuarios = [];
+  const categorias = [];
+  const subcategorias = [];
+  const productos = [];
   return (
     <div>
       <h2 className='h4 mb-1'>Hola, {usuario?.nombre}</h2>

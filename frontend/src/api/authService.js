@@ -7,7 +7,7 @@
  */
 
  //nstancia de axios ya configurada con la url del backend y el token
- import axiosClient from "./axiosclient";
+ import axiosClient from "./axiosClient.js";
  //envia email y password al backend si son correctos el backend responde con
  // {token, usuario}si no axios lanza un error 
  //que el componente que llama debe capturar con try/catch

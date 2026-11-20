@@ -6,7 +6,7 @@
 //hook para navegar automaticamente (sinque el usuario haga clic en un link )
 import { useNavigate } from 'react-router-dom';
 //Hook paras leer el usuario logueado y la funcion logout
-import { useAuth } from '../../context/AuthContex.jsx';
+import { useAuth } from '../../context/AuthContext.jsx';
 // no recibe props toma todo lo que necesita del AuthContext
 function Topbar() {
     //Usuario datos qde quien inicio sesion; logout borra la sesion
